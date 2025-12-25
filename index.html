@@ -1,0 +1,226 @@
+<!---->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Explorer</title>
+
+
+
+
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo">Travel<span>Explorer</span></div>
+
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="/packages">Packages</a>
+            <a href="/destinations">Destinations</a>
+            <a href="/contact">Contact</a>
+            
+      <button class="nav-btn login-btn"  onclick="showLogin()" >Login </button>
+      <button class="nav-btn signup-btn"  onclick="showSignup()">Signup </button>
+        </nav>
+
+<!-- PROFILE AREA -->
+<div class="profile-wrapper" style="display:none;">
+  <img id="profileImg" class="profile-avatar" src="/static/img/default.png" />
+
+  <div id="profileDropdown" class="profile-dropdown">
+    <div class="profile-header">
+      <img id="profileImgLarge" src="/static/img/default.png" />
+      <div>
+        <h4 id="profileName">User Name</h4>
+        <p id="profileEmail">email@example.com</p>
+      </div>
+    </div>
+
+    <ul class="profile-menu">
+      <li onclick="goToBookings()">📦 My Bookings</li>
+      <li>💳 Transaction History</li>
+      <li>✈️ Travel History with us</li>
+      <li class="logout" onclick="logoutUser()">🚪 Logout</li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </header>
+   
+
+<!-- 🔥 LOGIN MODAL -->
+<div id="loginModal" class="modal hidden">
+  <div class="modal-content animated">
+    <span class="close-btn" onclick="hideLogin()">&times;</span>
+
+    <h2>Login</h2>
+
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+
+    <button class="btn" onclick="loginUser()">Login</button>
+
+    <div class="divider">OR</div>
+
+    <button class="google-btn" onclick="googleLogin()">
+      <img src="https://www.svgrepo.com/show/475656/google-color.svg">
+      Continue with Google
+    </button>
+
+    <p class="switch-text">
+      Don't have an account?  
+      <span onclick="switchToSignup()">Create Account</span>
+    </p>
+  </div>
+</div>
+
+<!-- 🔥 SIGNUP MODAL -->
+<div id="signupModal" class="modal hidden">
+  <div class="modal-content animated">
+    <span class="close-btn" onclick="hideSignup()">&times;</span>
+
+    <h2>Create Account</h2>
+
+    <input type="text" id="signupName" placeholder="Full Name">
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPassword" placeholder="Password">
+
+    <button class="btn" onclick="signupUser()">Create Account</button>
+
+    <div class="divider">OR</div>
+
+    <button class="google-btn" onclick="googleLogin()">
+      <img src="https://www.svgrepo.com/show/475656/google-color.svg">
+      Continue with Google
+    </button>
+
+    <p class="switch-text">
+      Already have an account?  
+      <span onclick="switchToLogin()">Login</span>
+    </p>
+  </div>
+</div>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-glass">
+            <h1>Discover Your Next Adventure</h1>
+            <p>Find the best travel destinations, exclusive packages, and budget-friendly tours.</p>
+
+            <a class="hero-btn" href="#">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Popular Packages -->
+    <section class="packages">
+        <h2 class="section-title">Popular Packages</h2>
+
+        <div class="pkg-container">
+
+            <div class="pkg-card">
+                <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b" alt="">
+                <h3>Maldives</h3>
+                <p>3 days, 2 nights | Starting at $299</p>
+                <button class="book-btn">Book Now</button>
+            </div>
+
+            <div class="pkg-card">
+                <img src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef" alt="">
+                <h3>Switzerland</h3>
+                <p>5 days, 4 nights | Starting at $499</p>
+                <button class="book-btn">Book Now</button>
+            </div>
+
+            <div class="pkg-card">
+                <img src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef" alt="">
+                <h3>Bali</h3>
+                <p>4 days, 3 nights | Starting at $350</p>
+                <button class="book-btn">Book Now</button>
+            </div>
+
+        </div>
+    </section><footer class="backdrop-blur-xl bg-white/10 border-t border-white/20 mt-20">
+
+    <!-- Main Footer -->
+    <div class="max-w-7x2 mx-auto px-6 py-12 grid md:grid-cols-4 gap-10 text-gray-200 bg-black">
+
+        <!-- Brand -->
+        <div>
+            <h2 class="text-3xl font-extrabold text-white drop-shadow-lg">Travel Agency</h2>
+            <p class="mt-3 text-gray-300">
+                Your trusted travel partner for premium adventures in Bangladesh & around the world.
+            </p>
+        </div>
+
+        <!-- Links -->
+        <div>
+            <h3 class="text-xl font-semibold text-white mb-3">Quick Links</h3>
+            <ul class="space-y-2 text-gray-300">
+                <li><a href="/" class="hover:text-blue-400 transition-all hover:pl-1">Home</a></li>
+                <li><a href="/packages" class="hover:text-blue-400 transition-all hover:pl-1">Packages</a></li>
+                <li><a href="/blog" class="hover:text-blue-400 transition-all hover:pl-1">Blog</a></li>
+                <li><a href="/contact" class="hover:text-blue-400 transition-all hover:pl-1">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Popular -->
+        <div>
+            <h3 class="text-xl font-semibold text-white mb-3">Popular Spots</h3>
+            <ul class="space-y-2 text-gray-300">
+                <li class="hover:text-blue-400 transition-all hover:pl-1">Cox's Bazar</li>
+                <li class="hover:text-blue-400 transition-all hover:pl-1">Sajek Valley</li>
+                <li class="hover:text-blue-400 transition-all hover:pl-1">Bandarban</li>
+                <li class="hover:text-blue-400 transition-all hover:pl-1">Dubai</li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <h3 class="text-xl font-semibold text-white mb-3">Contact</h3>
+            <p class="text-gray-300">📞 +880 1234-567890</p>
+            <p class="text-gray-300">✉️ info@travelagency.com</p>
+
+            <div class="flex space-x-4 mt-4">
+                <a class="glass-icon">🌐</a>
+                <a class="glass-icon">📘</a>
+                <a class="glass-icon">📸</a>
+                <a class="glass-icon">▶️</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="py-4 text-center text-gray-300 border-t border-white/20 bg-black">
+        © 2025 Travel Agency. All Rights Reserved.
+    </div>
+</footer>
+<!-- 🔥 JS FILES (ALWAYS LAST) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script src="/static/js/firebase-init.js"></script>
+<script src="/static/js/main.js"></script>
+<script src="/static/JS/auth.js"></script>
+ <script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("showLogin") === "true") {
+    showLogin();
+  }
+</script>
+    
+
+</body>
+</html>
